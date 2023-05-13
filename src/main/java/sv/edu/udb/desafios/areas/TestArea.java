@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package sv.edu.udb.desafios;
+package sv.edu.udb.desafios.areas;
 
 import java.util.Scanner;
 
