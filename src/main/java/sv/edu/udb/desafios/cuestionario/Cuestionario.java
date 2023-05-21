@@ -28,6 +28,7 @@ public class Cuestionario {
      */
     public Cuestionario(int cantidadPreguntas) {
         this.cantidadPreguntas = cantidadPreguntas;
+        this.prepararCuestionario();
     }
 
     // Métodos propios 
@@ -35,7 +36,7 @@ public class Cuestionario {
      * Se encargará de recorrer el HashMap y agregar la cantidad de preguntas
      * que tenga la variable cantidadPregutas a la lista lstPreguntas
      */
-    public void prepararCuestionario() {
+    private void prepararCuestionario() {
 
         this.bancoPreguntas = new BancoPreguntas();
         this.bancoPreguntas.prepararBancoPreguntas();
@@ -61,13 +62,13 @@ public class Cuestionario {
      * @param respuestaCorrecta
      * @return
      */
-    public String verificarRespuesta(boolean respuestaUsuario, boolean respuestaCorrecta) {
-        if (respuestaUsuario == respuestaCorrecta) {
+    public String verificarRespuesta(Boolean respuestaUsuario, Boolean respuestaCorrecta) {
+        if (respuestaUsuario.equals(respuestaCorrecta) ) {
             this.nota++;
             return "Respuesta Correcta";
-        } else {
-            return "Respuesta Incorrecta";
-        }
+        } 
+        return "Respuesta Incorrecta";
+        
     }
 
     // GETTERS Y SETTERS

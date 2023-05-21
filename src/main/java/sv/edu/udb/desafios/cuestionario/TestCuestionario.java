@@ -42,15 +42,14 @@ public class TestCuestionario {
             System.out.println("Cuestionario JAVA POO");
             System.out.println("*********************");
             cuestionario = new Cuestionario(cantidadPreguntas);
-            cuestionario.prepararCuestionario();
             esCuestionarioExitoso = true;
 
             try {
                 for (Pregunta pregunta : cuestionario.getLstPreguntas()) {
                     System.out.println(pregunta.getTexto());
-                    boolean respuesta = scanner.nextBoolean();
-                    String respuestaString = cuestionario.verificarRespuesta(respuesta, pregunta.getRespuesta());
-                    System.out.println(respuestaString);
+                    Boolean respuesta = scanner.nextBoolean();
+                    String resultado = cuestionario.verificarRespuesta(respuesta, pregunta.getRespuesta());
+                    System.out.println(resultado);
                     System.out.println("Respuestas correctas: " + cuestionario.getNota() + " de " + cantidadPreguntas);
                     System.out.println("*********************");
                 }
@@ -63,7 +62,8 @@ public class TestCuestionario {
         } while (!esCuestionarioExitoso);
 
         // Mostrar notas
-        notaFinal = ((double) cuestionario.getNota() / (double) cantidadPreguntas) * 10;
+        //notaFinal = ((double) cuestionario.getNota() / (double) cantidadPreguntas) * 10;
+        notaFinal = (cuestionario.getNota() *10) / cantidadPreguntas;
         System.out.println("Su nota final es: " + decimalFormat.format(notaFinal));
 
     }
